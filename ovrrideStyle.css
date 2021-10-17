@@ -2,6 +2,7 @@
 
 :root {
   --black-shadow-color: rgba(0, 0, 0, 0.15);
+  --light-shadow-color: rgba(0, 0, 0, 0.2);
   --btn-gradients-light-hover-quiet-color: #dcf4ff;
   --btn-gradients-light-pressed-color: #aedcf5;
   --btn-gradients-light-hover-color: #1da4ff;
@@ -320,7 +321,7 @@ input-base-module: v2
 [data-radiant-v2] .input-base-module__container,
 .bk-input-container-inner {
   background: var(--grey-p7-color) !important;
-  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: inset 1px 1px 1px var(--black-shadow-color) !important;
   border-radius: 4px !important;
   border: 1px solid transparent !important;
   border-bottom: none !important;
@@ -416,8 +417,8 @@ input:placeholder-shown {
 
 /* popup v2 */
 .modal-module__modal {
-  box-shadow: 15px 30px 40px rgba(0, 0, 0, 0.2),
-    0px 11px 15px -2px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 15px 30px 40px var(--light-shadow-color),
+    0px 11px 15px -2px var(--light-shadow-color) !important;
   border-radius: 10px !important;
 }
 
@@ -432,3 +433,17 @@ input:placeholder-shown {
   font-size: 24px !important;
   background: var(--grey-p9-color) !important;
 }
+
+/*Pinboard card (regular card container)*/
+.bk-pinboard-data-viz {
+  background: var(--grey-p9-color) !important;
+  border: 0.5px solid var(--grey-p6-color)  !important;
+  box-shadow: 1px 1px 1px var(--black-shadow-color) !important;
+  border-radius: 10px !important;
+}
+
+.bk-pinboard-data-viz:hover {
+  border: 0.5px solid var(--grey-p6-color)   !important;
+box-shadow: 4px 4px 8px var(--light-shadow-color)  !important;
+}
+
