@@ -14,6 +14,7 @@
   --grey-p8-color: #f7f7f7;
   --grey-p9-color: #ffffff;
   --grey-p3-color: #b0b0b0;
+  --grey-n1-color: #707070;
   --icon-light-blue-color: #005eac;
   --light-sky-blue-color: rgba(136, 221, 255, 0.15);
   --rough-n-tumble-color: #5a4949;
@@ -370,6 +371,12 @@ input:placeholder-shown {
   padding-left: 13px !important;
 }
 
+/*show table checkbox  */
+.bk-actionable-list .bk-actionable-list-content .bk-list-header .bk-select-all-checkbox,
+.bk-actionable-list .bk-actionable-list-content .bk-list-content .bk-list-content-li .bk-item-selector-checkbox {
+  visibility: visible !important;
+}
+
 /* table header */
 .bk-list-header {
   padding: 0 !important;
@@ -395,7 +402,8 @@ input:placeholder-shown {
 
 .bk-actionable-list .bk-actionable-list-content .bk-list .bk-name .bk-name-text-wrapper .bk-name-text,
 .bk-actionable-list .bk-actionable-list-content .bk-list .bk-name .bk-description-text,
-.vizChart .chart-legend-container-v2 .legend-item-v2 .label-v2 .legend-text-v2   /* chart legend */ {
+.vizChart .chart-legend-container-v2 .legend-item-v2 .label-v2 .legend-text-v2   /* chart legend */,
+.bk-pagination-display-text /* pagination text */ {
   color: var(--light-secondary) !important;
 }
 
@@ -444,6 +452,11 @@ input:placeholder-shown {
 
 .bk-pinboard-data-viz:hover {
   border: 0.5px solid var(--grey-p6-color)   !important;
-box-shadow: 4px 4px 8px var(--light-shadow-color)  !important;
+  box-shadow: 4px 4px 8px var(--light-shadow-color)  !important;
 }
 
+/* pinbord table checkbox */
+.bk-checkbox-container .bk-checkbox-label::before {
+  border: 1px solid var(--grey-n1-color) !important;
+  border-radius: 2px !important;
+}
