@@ -148,7 +148,7 @@ bk-axis-sort-icon : pinboard up/down arrow
 */
 
 .bk-modal-action-buttons .bk-cancel-button .rd-button-wrapper {
-  border: 1.5px solid var(--icon-light-blue-color) !important;
+  border: 1px solid var(--icon-light-blue-color) !important;
   border-radius: 4px !important;
 }
 
@@ -179,7 +179,12 @@ bk-axis-sort-icon : pinboard up/down arrow
 
 /* modal inside seconday button (border-color)  */
 .modal-module__footer .modal-module__actionBtn > .button-module__secondary {
-  border: 1.5px solid var(--icon-light-blue-color) !important;
+  border: 1px solid var(--icon-light-blue-color) !important;
+}
+
+/* cancel button height  */
+.modal-footer .bk-cancel-button .rd-button-wrapper .rd-button-secondary {
+  height: 29px !important;
 }
 
 .modal-module__footer
@@ -191,7 +196,7 @@ bk-axis-sort-icon : pinboard up/down arrow
   .rd-button-wrapper
   .rd-button-secondary:hover {
   background: var(--btn-gradients-light-hover-color) !important;
-  border: 1.5px solid transparent !important;
+  border: 1px solid transparent !important;
 }
 
 .modal-module__footer
@@ -203,7 +208,7 @@ bk-axis-sort-icon : pinboard up/down arrow
   .rd-button-wrapper
   .rd-button-secondary:active {
   background: var(--blue-n1-color) !important;
-  border: 1.5px solid transparent !important;
+  border: 1px solid transparent !important;
 }
 
 /*develop tab see in live btn 
@@ -459,4 +464,10 @@ input:placeholder-shown {
 .bk-checkbox-container .bk-checkbox-label::before {
   border: 1px solid var(--grey-n1-color) !important;
   border-radius: 2px !important;
+}
+
+/* pinboard title breaking in bottom side*/
+.bk-sharable-item-pinboard-plugin .bk-edit-dropdown .bk-pinboard-drop-down .bk-select-box .ui-select-container .ui-select-match,
+.bk-sharable-item-pinboard-plugin .bk-edit-dropdown .bk-pinboard-drop-down .bk-select-box .ui-select-container .ui-select-match .select2-chosen {
+  height: 42px !important;
 }
