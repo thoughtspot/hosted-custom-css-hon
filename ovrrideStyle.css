@@ -15,6 +15,7 @@
   --grey-p9-color: #ffffff;
   --grey-p3-color: #b0b0b0;
   --grey-n1-color: #707070;
+  --very-light-grey-color: #f9f9f9;
   --icon-light-blue-color: #005eac;
   --light-sky-blue-color: rgba(136, 221, 255, 0.15);
   --rough-n-tumble-color: #5a4949;
@@ -51,16 +52,24 @@
   font-style: italic;
 }
 
-body {
+* {
   font-family: "HoneywellSansWeb" !important;
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: "HoneywellSansWeb" !important;
+/* app background*/
+
+.bk-actionable-list .bk-actionable-list-content .bk-actionable-list-header
+/*action header */
+, .bk-actionable-list .bk-actionable-list-content .bk-list-header-wrapper
+/* table headr right/left space*/
+, .bk-actionable-list .bk-actionable-list-content .bk-list-content
+/* table body right/left space*/
+, .bk-sharable-item .bk-sharable-item-container .bk-sharable-content-container
+/*  pinboard detail */
+, .bk-vertical-flex-container-sized
+/* data tab*/,
+.answer-module__searchCurtain /* answer section*/ {
+  background-color: var(--grey-p8-color) !important;
 }
 
 /* Button
@@ -425,6 +434,65 @@ input:placeholder-shown {
   padding-left: 15px !important;
 }
 
+/*after select checkbox, table background */
+.bk-list-content-li.vs-repeat-repeated-element.ng-scope.bk-row-selected-bg {
+  background: var(--very-light-grey-color) !important;
+}
+
+/* Data tab: Table 
+*/
+
+/* table edge border*/
+.bk-table-container {
+  border: none !important;
+}
+
+/* header text*/
+ .bk-table-container .slick-header-column .slick-column-name {
+  font-weight: 800 !important;
+  font-size: 14px !important;
+  vertical-align: sub !important;
+} 
+
+/* data tab inside table verticle divider*/
+.bk-slickgrid-table
+  .bk-table-container
+  .slick-header-column
+  .slick-resizable-handle {
+  border-right: 2px solid var(--grey-p8-color) !important;
+}
+
+/* header bottom border */
+.bk-slickgrid-table .bk-table-container .slick-header {
+  border-bottom: 2px solid var(--grey-p8-color) !important;
+}
+
+/* table header text*/
+.bk-explorer
+  .bk-content
+  .bk-table-detail
+  .bk-explorer-table
+  .slick-header-columns
+  .slick-column-name {
+  font-weight: 800 !important;
+  color: var(--grey-p5-color) !important;
+  font-size: 12px !important;
+}
+
+/* table content row */
+.bk-slickgrid-table .bk-table-container .slick-row {
+  height: 39px !important;
+}
+
+/*data table row text*/
+.bk-table-detail .bk-explorer-table .slick-row .slick-cell.column-name-cell .edit-wrapper .bk-value /*static row  */,
+.bk-explorer .bk-content .bk-table-detail .bk-explorer-table .slick-row .slick-cell /* scrollable row*/,
+.bk-actionable-list .bk-actionable-list-content .bk-list .bk-name .bk-name-text /* Data Tab: body text */ {
+  font-size: 16px !important;
+  color: var(--light-secondary) !important;
+  font-weight: 500px !important;
+}
+
 /* Popup 
 */
 
@@ -450,14 +518,14 @@ input:placeholder-shown {
 /*Pinboard card (regular card container)*/
 .bk-pinboard-data-viz {
   background: var(--grey-p9-color) !important;
-  border: 0.5px solid var(--grey-p6-color)  !important;
+  border: 0.5px solid var(--grey-p6-color) !important;
   box-shadow: 1px 1px 1px var(--black-shadow-color) !important;
   border-radius: 10px !important;
 }
 
 .bk-pinboard-data-viz:hover {
-  border: 0.5px solid var(--grey-p6-color)   !important;
-  box-shadow: 4px 4px 8px var(--light-shadow-color)  !important;
+  border: 0.5px solid var(--grey-p6-color) !important;
+  box-shadow: 4px 4px 8px var(--light-shadow-color) !important;
 }
 
 /* pinbord table checkbox */
@@ -466,8 +534,27 @@ input:placeholder-shown {
   border-radius: 2px !important;
 }
 
-/* pinboard title breaking in bottom side*/
-.bk-sharable-item-pinboard-plugin .bk-edit-dropdown .bk-pinboard-drop-down .bk-select-box .ui-select-container .ui-select-match,
-.bk-sharable-item-pinboard-plugin .bk-edit-dropdown .bk-pinboard-drop-down .bk-select-box .ui-select-container .ui-select-match .select2-chosen {
+/* fix truncated Pinboard title bottom  */
+.bk-sharable-item-pinboard-plugin
+  .bk-edit-dropdown
+  .bk-pinboard-drop-down
+  .bk-select-box
+  .ui-select-container
+  .ui-select-match,
+.bk-sharable-item-pinboard-plugin
+  .bk-edit-dropdown
+  .bk-pinboard-drop-down
+  .bk-select-box
+  .ui-select-container
+  .ui-select-match
+  .select2-chosen {
   height: 42px !important;
+}
+
+/* pinboard select  */
+.select2-chosen {
+  color: var(--grey-p5-color) !important;
+  font-size: 24px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0px !important;
 }
