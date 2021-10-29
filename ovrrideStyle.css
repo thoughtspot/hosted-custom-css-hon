@@ -20,6 +20,7 @@
   --light-sky-blue-color: rgba(136, 221, 255, 0.15);
   --rough-n-tumble-color: #5a4949;
   --light-secondary: #606060;
+  --search-blue: #88DDFF;
 }
 
 /* Font-family */
@@ -394,12 +395,45 @@ input:placeholder-shown {
 /* table header */
 .bk-list-header {
   padding: 0 !important;
-  height: 50px !important;
-  border: 2px solid var(--grey-p8-color) !important;
+  height: 56px !important; /*border bottom border 2px + height 54px */
+  border-bottom: 2px solid var(--grey-p8-color) !important;
+  line-height: 20px !important;
   background: var(--grey-p9-color) !important;
   font-weight: 800 !important;
   color: var(--grey-p5-color) !important;
   text-transform: uppercase !important;
+  font-size: 12px !important;
+}
+
+/* table body text */
+.bk-actionable-list .bk-actionable-list-content .bk-list-content .bk-list-content-li {
+   max-height: 50px !important;/* 49px height + 1px border */
+   font-size: 16px !important;
+   font-weight: 500 !important;
+   height: 50px !important;
+}
+
+/* table body hide subtext */
+ .bk-actionable-list .bk-actionable-list-content .bk-list .bk-name .bk-description-text {
+  display: none !important;
+} 
+
+/*modified column */
+.bk-actionable-list .bk-actionable-list-content .bk-list .bk-time-and-author .bk-time-author-label,
+.rd-avatar-display-text /*author */{
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  color: var(--light-secondary) !important;
+}
+
+/* table Name column*/
+.bk-actionable-list .bk-actionable-list-content .bk-list .bk-name .bk-name-text-wrapper .bk-name-text,
+.bk-actionable-list .bk-actionable-list-content .bk-list .bk-name .bk-name-text /*Data tab: tablname column*/ {
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  letter-spacing: 0px !important;
 }
 
 /*table context box shadow */
@@ -425,13 +459,13 @@ input:placeholder-shown {
 .bk-column-title {
   border-left: 2px solid var(--grey-p8-color) !important;
   text-align: center !important;
-  padding-left: 20px !important;
+  padding-left: 16px !important;
   margin-right: 5px !important;
 }
 
 /* data table content alignment */
 .bk-column {
-  padding-left: 15px !important;
+  padding-left: 16px !important;
 }
 
 /*after select checkbox, table background */
@@ -447,14 +481,26 @@ input:placeholder-shown {
   border: none !important;
 }
 
-/* header text*/
- .bk-table-container .slick-header-column .slick-column-name {
+/*data table row text*/
+.bk-table-detail .bk-explorer-table .slick-row .slick-cell.column-name-cell .edit-wrapper .bk-value /*static row  */,
+.bk-explorer .bk-content .bk-table-detail .bk-explorer-table .slick-row .slick-cell /* scrollable row*/,
+.bk-actionable-list .bk-actionable-list-content .bk-list .bk-name .bk-name-text /* Data Tab: body text */ {
+  font-size: 16px !important;
+  color: var(--light-secondary) !important;
+  font-weight: 500px !important;
+}
+
+/* Slick table inside data tab, after click row 
+*/
+
+/* slick header text*/
+.bk-table-container .slick-header-column .slick-column-name {
   font-weight: 800 !important;
   font-size: 14px !important;
   vertical-align: sub !important;
 } 
 
-/* data tab inside table verticle divider*/
+/* slick table verticle divider*/
 .bk-slickgrid-table
   .bk-table-container
   .slick-header-column
@@ -462,12 +508,12 @@ input:placeholder-shown {
   border-right: 2px solid var(--grey-p8-color) !important;
 }
 
-/* header bottom border */
+/* slick header bottom border */
 .bk-slickgrid-table .bk-table-container .slick-header {
   border-bottom: 2px solid var(--grey-p8-color) !important;
 }
 
-/* table header text*/
+/* slick table header text*/
 .bk-explorer
   .bk-content
   .bk-table-detail
@@ -482,15 +528,6 @@ input:placeholder-shown {
 /* table content row */
 .bk-slickgrid-table .bk-table-container .slick-row {
   height: 39px !important;
-}
-
-/*data table row text*/
-.bk-table-detail .bk-explorer-table .slick-row .slick-cell.column-name-cell .edit-wrapper .bk-value /*static row  */,
-.bk-explorer .bk-content .bk-table-detail .bk-explorer-table .slick-row .slick-cell /* scrollable row*/,
-.bk-actionable-list .bk-actionable-list-content .bk-list .bk-name .bk-name-text /* Data Tab: body text */ {
-  font-size: 16px !important;
-  color: var(--light-secondary) !important;
-  font-weight: 500px !important;
 }
 
 /* Popup 
@@ -557,4 +594,9 @@ input:placeholder-shown {
   font-size: 24px !important;
   font-weight: 900 !important;
   letter-spacing: 0px !important;
+}
+
+/*Search dropdown */
+.sage-completions-dropdown-module__completion:hover {
+    background-color: var(--search-blue) !important;
 }
