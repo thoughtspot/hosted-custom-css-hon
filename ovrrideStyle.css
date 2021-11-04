@@ -8,13 +8,14 @@
   --btn-gradients-light-hover-color: #1da4ff;
   --blue-n1-color: #0072c2;
   --grey-p1-color: #909090;
-  --grey-p5-color: #303030;
+  --grey-p5-color: #D0D0D0;
   --grey-p6-color: #e0e0e0;
   --grey-p7-color: #f0f0f0;
   --grey-p8-color: #f7f7f7;
   --grey-p9-color: #ffffff;
   --grey-p3-color: #b0b0b0;
   --grey-n1-color: #707070;
+  --grey-n5-color: #303030;
   --very-light-grey-color: #f9f9f9;
   --icon-light-blue-color: #005eac;
   --light-sky-blue-color: rgba(136, 221, 255, 0.15);
@@ -90,25 +91,42 @@ bk-axis-sort-icon : pinboard up/down arrow
   ) !important;
   box-shadow: 1px 1px 1px var(--black-shadow-color) !important;
   border-radius: 4px !important;
-  color: var(--grey-p9-color);
+  color: var(--grey-p9-color) !important;
+}
+
+/*fix8: +Pinboard' should be primary button.*/
+.bk-create-new-pinboard .rd-button-wrapper .rd-button-secondary  {
+  font-weight: 800 !important;
+  background: linear-gradient(
+    144.82deg,
+    #0072c2 5.58%,
+    #1792e5 93.38%
+  ) !important;
+  box-shadow: 1px 1px 1px transparent !important;
+  border-radius: 4px !important;
+  color: var(--grey-p9-color) !important;
+  border: 1px solid transparent !important;
 }
 
 .rd-button-primary:hover,
 .bk-button-primary:hover,
-.button-module__primary:hover {
+.button-module__primary:hover,
+.bk-create-new-pinboard .rd-button-wrapper .rd-button-secondary:hover {
   background: var(--btn-gradients-light-hover-color) !important;
 }
 
 .rd-button-primary:active,
 .bk-button-primary:active,
-.button-module__primary:active {
+.button-module__primary:active,
+.bk-create-new-pinboard .rd-button-wrapper .rd-button-secondary:active {
   background: var(--blue-n1-color) !important;
 }
 
 .rd-button-primary[disabled],
 .bk-button-primary[disabled],
 .button-module__primary[disabled],
-.bk-disabled-button.bk-primary-button {
+.bk-disabled-button.bk-primary-button,
+.bk-create-new-pinboard .rd-button-wrapper .rd-button-secondary[disabled] {
   background: var(--grey-p3-color) !important;
   border-radius: 4px !important;
   color: var(--grey-p9-color);
@@ -119,7 +137,7 @@ bk-axis-sort-icon : pinboard up/down arrow
 .button-module__secondary,
 .bk-axis-sort-icon {
   background: var(--grey-p9-color) !important;
-  color: var(--grey-p5-color) !important;
+  color: var(--grey-n5-color) !important;
   border: 1px solid var(--grey-p7-color) !important;
   box-sizing: border-box !important;
   box-shadow: 1px 1px 1px var(--black-shadow-color) !important;
@@ -148,7 +166,7 @@ bk-axis-sort-icon : pinboard up/down arrow
 .bk-secondary-button[disabled],
 .button-module__disabled,
 .bk-disabled-button.bk-secondary-button {
-  border: 1.5px solid var(--grey-p3-color) !important;
+  border: 1px solid var(--grey-p3-color) !important;
   background: var(--grey-p9-color);
   color: var(--grey-p3-color) !important;
   pointer-events: none;
@@ -221,6 +239,20 @@ bk-axis-sort-icon : pinboard up/down arrow
   border: 1px solid transparent !important;
 }
 
+/*fix.17 discard changes link */
+button[aria-label="Discard changes"], button[aria-label="Discard changes"]:hover,
+button[aria-label="Don't save"],
+button[aria-label="Don't save"] >p, button[aria-label="Don't save"]:hover >p {
+  box-shadow: none  !important;
+  border: none  !important;
+  outline: none  !important;
+  color: var(--icon-light-blue-color)  !important;
+  background: var(--grey-p9-color) !important;
+  letter-spacing: 0.5px !important;
+  font-weight: 700  !important;
+  font-size: 14px !important;
+}
+
 /*develop tab see in live btn 
 */
 
@@ -249,7 +281,7 @@ chip-base-module: answer v2
   border-radius: 4px !important;
   background-color: var(--grey-p9-color) !important;
   font: 16px !important;
-  color: var(--grey-p5-color) !important;
+  color: var(--grey-n5-color) !important;
 }
 
 /*viz pinboard add filter chips */
@@ -323,6 +355,7 @@ chip-base-module: answer v2
 
 .rd-chip.rd-chip-style-filter {
   background: var(--grey-p9-color) !important;
+  padding: 0 10px !important; /* pinboard dropdown padding */ 
 }
 
 .rd-chip.rd-chip-style-filter:hover {
@@ -374,12 +407,17 @@ input:placeholder-shown {
 
 [data-radiant-v2].icon-module__gray,
 .bk-input-container-inner .rd-icon-color-gray {
-  fill: var(--grey-p5-color) !important;
+  fill: var(--grey-n5-color) !important;
 }
 
 /* table header
   answerlist/pinboard list => v1
 */
+
+/*fix16. Search box shift when pagination is done  */
+.bk-pagination-display-text {
+  width: 52px !important; 
+}
 
 /* checkbox alignment */
 .bk-select-all-checkbox {
@@ -400,7 +438,7 @@ input:placeholder-shown {
   line-height: 20px !important;
   background: var(--grey-p9-color) !important;
   font-weight: 800 !important;
-  color: var(--grey-p5-color) !important;
+  color: var(--grey-n5-color) !important;
   text-transform: uppercase !important;
   font-size: 12px !important;
 }
@@ -521,7 +559,7 @@ input:placeholder-shown {
   .slick-header-columns
   .slick-column-name {
   font-weight: 800 !important;
-  color: var(--grey-p5-color) !important;
+  color: var(--grey-n5-color) !important;
   font-size: 12px !important;
 }
 
@@ -547,22 +585,24 @@ input:placeholder-shown {
 .modal-module__header .modal-module__title,
 .modal-header {
   padding-top: 30px !important;
-  color: var(--grey-p5-color) !important;
+  color: var(--grey-n5-color) !important;
   font-size: 24px !important;
   background: var(--grey-p9-color) !important;
 }
 
 /*Pinboard card (regular card container)*/
-.bk-pinboard-data-viz {
+.bk-pinboard-data-viz,
+ .bk-pinboard-generic-viz /* fix15.Card hover/raised shadow*/ {
   background: var(--grey-p9-color) !important;
   border: 0.5px solid var(--grey-p6-color) !important;
-  box-shadow: 1px 1px 1px var(--black-shadow-color) !important;
+  box-shadow: 1px 1px 1px 0px var(--black-shadow-color) !important;
   border-radius: 10px !important;
 }
 
-.bk-pinboard-data-viz:hover {
+.bk-pinboard-data-viz:hover, 
+.bk-pinboard-generic-viz:hover {
   border: 0.5px solid var(--grey-p6-color) !important;
-  box-shadow: 4px 4px 8px var(--light-shadow-color) !important;
+  box-shadow: 4px 4px 8px 0px var(--light-shadow-color) !important;
 }
 
 /* pinbord table checkbox */
@@ -590,13 +630,98 @@ input:placeholder-shown {
 
 /* pinboard select  */
 .select2-chosen {
-  color: var(--grey-p5-color) !important;
+  color: var(--grey-n5-color) !important;
   font-size: 24px !important;
   font-weight: 900 !important;
   letter-spacing: 0px !important;
 }
 
 /*Search dropdown */
-.sage-completions-dropdown-module__completion:hover {
+.sage-completions-dropdown-module__completion:hover,
+.bk-actionable-list .bk-actionable-list-content .bk-list-content .bk-list-content-li:hover:not(.bk-row-selected-bg) /* table hover*/ {
     background-color: var(--search-blue) !important;
+}
+
+/* Pinboard */
+
+/* User Information (name and user badges) are not required */
+.bk-top-users {
+  display: none !important;
+}
+
+/* Filter icon padding is incorrect/ Dropdown outside padding w.r.t outer white container */
+.pinboard-filter-panel > .bk-filter-panel{
+  padding: 16px !important;
+}
+
+/* pinboard dropdown top/bottom padding */
+.rd-chip-text-style-regular, .rd-chip-text-style-bold {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+/*fix6. Card Title font spec is wrong (pinboard card title) */
+.bk-pinboard-viz-title-description > .bk-title-description >.bk-title-section {
+  font-size: 16px !important;
+  font-style: normal !important;
+  line-height: 24px !important;
+  letter-spacing: 2.5px !important;
+  color: var(--grey-n5-color) !important;
+}
+
+/*fix7. pinboard card  :-breaking changes */
+/* .bk-pinboard-data-viz, .bk-pinboard-generic-viz {
+  padding: 32px !important;
+} */
+
+/*fix7. pinboard card/action-menu */
+/* .bk-pinboard-card .bk-pb-card-action-menu {
+  padding-top: 32px !important;
+  padding-right: 32px !important;
+} */
+
+/*fix8. description padding :- breaking changes (shrink chart size)*/
+.bk-pinboard-data-viz .bk-pinboard-viz-header .bk-description {
+  padding-top: 16px !important;
+}
+
+/*fix.9 Metric font specification wrong*/
+.headline-viz-module__aggregationValue {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  line-height: 24px !important;
+  letter-spacing: 0px !important;
+  color: var(--grey-n5-color) !important;
+}
+
+/* add pinboard dialog: input/textarea 
+bk-dialog-container : Inside Dialog  
+*/
+.bk-dialog-container input, .bk-dialog-container textarea {
+  background: var(--grey-p6-color) !important; 
+  box-shadow: inset 1px 1px 1px var(--black-shadow-color) !important;
+  border-radius: 4px !important;
+  border:  1px solid transparent !important; 
+  color: var(--light-secondary) !important; 
+  font-style: italic !important; 
+  font-size: 16px !important; 
+  line-height: 24px !important;
+  min-height: 40px !important;
+  padding: 8px 12px 8px 12px !important;
+}
+
+.bk-dialog-container input:hover, .bk-dialog-container textarea:hover  {
+  background: var(--grey-p5-color)  !important;
+  font-style: italic !important;  
+}
+
+.bk-dialog-container input:active, .bk-dialog-container textarea:active  {
+  border: 1px solid var(--icon-light-blue-color) !important; 
+  color:  var(--grey-n5-color) !important; 
+  font-style: normal !important; 
+}
+
+/* add pinboard dialog hide extra outline in text area*/
+.bk-dialog-field > textarea:focus-visible {
+  outline: none  !important; 
 }
