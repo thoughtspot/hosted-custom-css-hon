@@ -741,3 +741,8 @@ bk-dialog-container : Inside Dialog
 .bk-dialog-field > textarea:focus-visible {
   outline: none  !important; 
 }
+
+ /* table inside checkbox
+ .bk-checkbox-container .bk-checkbox:checked+.bk-checkbox-label::before {
+ add here checkbox style...
+} */
