@@ -414,6 +414,22 @@ input:placeholder-shown {
   answerlist/pinboard list => v1
 */
 
+/*tag border*/
+.bk-tagged-label {
+  border-color: var(--light-secondary) !important;
+}
+
+/* tag text color*/
+.bk-tagged-label .bk-label-text {
+ color: var(--light-secondary) !important;
+ font-weight: 500 !important; 
+}
+
+/* remove tag remove icon bg color */
+.rd-icon-remove-m >svg{
+  background-color: var(--grey-p9-color) !important;
+}
+
 /*fix16. Search box shift when pagination is done  */
 .bk-pagination-display-text {
   width: 52px !important; 
