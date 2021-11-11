@@ -714,7 +714,8 @@ input:placeholder-shown {
 }
 
 .bk-dialog-container  rd-icon:not(.bk-input-icon)+input,
- .bk-dialog-container textarea {
+ .bk-dialog-container textarea,
+ .bk-dialog .bk-dialog-field input {
   background: var(--grey-p6-color) !important; 
   box-shadow: inset 1px 1px 1px var(--black-shadow-color) !important;
   border-radius: 4px !important;
@@ -727,12 +728,14 @@ input:placeholder-shown {
   padding: 8px 12px 8px 12px !important;
 }
 
-.bk-dialog-container  rd-icon:not(.bk-input-icon)+input:hover, .bk-dialog-container textarea:hover  {
+.bk-dialog-container  rd-icon:not(.bk-input-icon)+input:hover, .bk-dialog-container textarea:hover,
+.bk-dialog .bk-dialog-field input:hover  {
   background: var(--grey-p5-color)  !important;
   font-style: italic !important;  
 }
 
-.bk-dialog-container  rd-icon:not(.bk-input-icon)+input:active, .bk-dialog-container textarea:active  {
+.bk-dialog-container  rd-icon:not(.bk-input-icon)+input:active, .bk-dialog-container textarea:active,
+.bk-dialog .bk-dialog-field input:active  {
   border: 1px solid var(--icon-light-blue-color) !important; 
   color:  var(--grey-n5-color) !important; 
   font-style: normal !important; 
