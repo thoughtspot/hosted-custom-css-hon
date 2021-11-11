@@ -22,6 +22,7 @@
   --rough-n-tumble-color: #5a4949;
   --light-secondary: #606060;
   --search-blue: #88DDFF;
+  --dodger-blue: #1792e5;
 }
 
 /* Font-family */
@@ -437,7 +438,7 @@ input:placeholder-shown {
 
 /* checkbox alignment */
 .bk-select-all-checkbox {
-  padding-left: 13px !important;
+  padding-left: 16px !important;
 }
 
 /*show table checkbox  */
@@ -667,7 +668,7 @@ input:placeholder-shown {
 
 /* Filter icon padding is incorrect/ Dropdown outside padding w.r.t outer white container */
 .pinboard-filter-panel > .bk-filter-panel{
-  padding: 16px !important;
+  padding: 8px 16px 16px 16px !important;  /* already 8px + 8px */
 }
 
 /* pinboard dropdown top/bottom padding */
@@ -677,12 +678,14 @@ input:placeholder-shown {
 }
 
 /*fix6. Card Title font spec is wrong (pinboard card title) */
-.bk-pinboard-viz-title-description > .bk-title-description >.bk-title-section {
+.bk-pinboard-viz-title-description > .bk-title-description >.bk-title-section, 
+.bk-title-description .bk-title-section .bk-title  {
   font-size: 16px !important;
   font-style: normal !important;
   line-height: 24px !important;
   letter-spacing: 2.5px !important;
   color: var(--grey-n5-color) !important;
+  font-weight: 800 !important;
 }
 
 /*fix7. pinboard card  :-breaking changes */
@@ -710,10 +713,8 @@ input:placeholder-shown {
   color: var(--grey-n5-color) !important;
 }
 
-/* add pinboard dialog: input/textarea 
-bk-dialog-container : Inside Dialog  
-*/
-.bk-dialog-container input, .bk-dialog-container textarea {
+.bk-dialog-container  rd-icon:not(.bk-input-icon)+input,
+ .bk-dialog-container textarea {
   background: var(--grey-p6-color) !important; 
   box-shadow: inset 1px 1px 1px var(--black-shadow-color) !important;
   border-radius: 4px !important;
@@ -726,12 +727,12 @@ bk-dialog-container : Inside Dialog
   padding: 8px 12px 8px 12px !important;
 }
 
-.bk-dialog-container input:hover, .bk-dialog-container textarea:hover  {
+.bk-dialog-container  rd-icon:not(.bk-input-icon)+input:hover, .bk-dialog-container textarea:hover  {
   background: var(--grey-p5-color)  !important;
   font-style: italic !important;  
 }
 
-.bk-dialog-container input:active, .bk-dialog-container textarea:active  {
+.bk-dialog-container  rd-icon:not(.bk-input-icon)+input:active, .bk-dialog-container textarea:active  {
   border: 1px solid var(--icon-light-blue-color) !important; 
   color:  var(--grey-n5-color) !important; 
   font-style: normal !important; 
@@ -740,6 +741,37 @@ bk-dialog-container : Inside Dialog
 /* add pinboard dialog hide extra outline in text area*/
 .bk-dialog-field > textarea:focus-visible {
   outline: none  !important; 
+}
+
+/* Tab
+.bk-category- for pinboard tab
+rd-tab-header-item for data tab
+*/
+
+/* non active tab text */
+.bk-category- > span, .rd-tab-header-item > a >span{
+  color: var(--light-secondary) !important;
+}
+
+/* active tab text */
+.bk-category-.bk-selected > span, .rd-tab-header-item-selected > a >span {
+ color: var(--grey-n5-color) !important;
+}
+
+/* active tab bottom border */
+.top-list-filters .bk-filter-item .bk-top-menu-filters li.bk-selected::after, .rd-tab-header-item-selected > a::after {
+  background-color: var(--dodger-blue)!important;
+}
+
+/* rangle select (add filter inside pinboard) */
+.bk-range-select .chosen-single > span  {
+  padding-top: 6px !important;
+}
+
+/* dropdown inside pinboard */
+.bk-operator-selector-wrapper > bk-select > .bk-select  > .bk-select-head,
+.bk-range-select .chosen-single  {
+  height: 40px  !important;
 }
 
  /* table inside checkbox
