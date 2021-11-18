@@ -668,7 +668,7 @@ input:placeholder-shown {
 
 /* Filter icon padding is incorrect/ Dropdown outside padding w.r.t outer white container */
 .pinboard-filter-panel > .bk-filter-panel{
-  padding: 8px 16px 16px 16px !important;  /* already 8px + 8px */
+  padding: 8px 16px 10px 16px !important;  /* already 8px + 8px */
 }
 
 /* pinboard dropdown top/bottom padding */
@@ -715,7 +715,8 @@ input:placeholder-shown {
 
 .bk-dialog-container  rd-icon:not(.bk-input-icon)+input,
  .bk-dialog-container textarea,
- .bk-dialog .bk-dialog-field input {
+ .bk-dialog .bk-dialog-field input,
+  .bk-range-select > .bk-range-select-row > input {
   background: var(--grey-p6-color) !important; 
   box-shadow: inset 1px 1px 1px var(--black-shadow-color) !important;
   border-radius: 4px !important;
@@ -729,13 +730,15 @@ input:placeholder-shown {
 }
 
 .bk-dialog-container  rd-icon:not(.bk-input-icon)+input:hover, .bk-dialog-container textarea:hover,
-.bk-dialog .bk-dialog-field input:hover  {
+.bk-dialog .bk-dialog-field input:hover,
+.bk-range-select > .bk-range-select-row > input:hover   {
   background: var(--grey-p5-color)  !important;
   font-style: italic !important;  
 }
 
 .bk-dialog-container  rd-icon:not(.bk-input-icon)+input:active, .bk-dialog-container textarea:active,
-.bk-dialog .bk-dialog-field input:active  {
+.bk-dialog .bk-dialog-field input:active,
+.bk-range-select > .bk-range-select-row > input:active   {
   border: 1px solid var(--icon-light-blue-color) !important; 
   color:  var(--grey-n5-color) !important; 
   font-style: normal !important; 
@@ -775,6 +778,53 @@ rd-tab-header-item for data tab
 .bk-operator-selector-wrapper > bk-select > .bk-select  > .bk-select-head,
 .bk-range-select .chosen-single  {
   height: 40px  !important;
+}
+
+/* pinboard add filter popup input */
+.bk-range-select > .bk-range-select-row > input {
+  margin-left: 5px !important;
+}
+
+/* fix Text box height should be equal to height of the drop down */
+.bk-operator-selector-wrapper > bk-select > .bk-select > .bk-select-head {
+  height: 32px !important;
+}
+
+/* fix Padding between drop down and button should be 8 px */
+.pin-button-module__dualIntentSecondaryButton {
+  padding-right: 8px !important;
+}
+
+/* fix Padding should be 8 px between the buttons. Height of the both button should be same */
+.button-module__buttonWrapper.modal-module__actionBtn button[aria-label='Save answer'] {
+  height: 34px !important;
+}
+
+/* fix Padding should be 8 px between the buttons. Height of the both button should be same */
+.modal-module__footer .modal-module__actionBtn {
+  margin-left: 8px !important;
+}
+
+/*fix Padding across 'GO' button need to be same. GO button padding 8 */
+.button-module__buttonWrapper.sage-search-bar-module__searchButton {
+  margin-top: 8px  !important;
+  margin-right: 8px  !important;
+  margin-bottom: 8px  !important;
+}
+
+/*after Go button padding, set alignment of search icon sage-search*/
+.sage-search-bar-module__leftIconWrapper {
+  margin-top: 19px !important;
+}
+
+/*after Go button padding, set alignment of token bar sage-search */
+.token-bar-module__tokenBarWrapper {
+  padding-top: 14px !important;
+}
+
+/*after Go button padding, set alignment of sage-search's placeholder */  
+.sage-search-box-module__bkSagePlaceholderText {
+  margin-top: 8px;
 }
 
  /* table inside checkbox
