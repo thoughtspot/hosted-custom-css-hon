@@ -831,3 +831,8 @@ rd-tab-header-item for data tab
  .bk-checkbox-container .bk-checkbox:checked+.bk-checkbox-label::before {
  add here checkbox style...
 } */
+
+/*fix pinboard top padding 50 => 16px */
+.sharable-item-panel {
+  padding-top: 16px !important;
+}
